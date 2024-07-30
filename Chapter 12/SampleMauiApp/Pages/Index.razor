@@ -1,0 +1,20 @@
+﻿@page "/"
+@inject IJSRuntime jsRuntime
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<br />
+
+<button @onclick="FindResponsiveness">Find Device</button>
+<h2>@whichDevice</h2>
+@code {
+    private string whichDevice { get; set; }
+    public async Task FindResponsiveness()
+    {
+        whichDevice = await jsRuntime.InvokeAsync<string>("whichDevice");
+
+    }
+}
+
+<SurveyPrompt Title="How is Blazor working for you?" />

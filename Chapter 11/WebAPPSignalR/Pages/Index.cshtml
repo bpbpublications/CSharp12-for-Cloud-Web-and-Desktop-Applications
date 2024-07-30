@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="row">&nbsp;</div>
+
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="joinGroup" value="Join Private Group" />
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-2">Send message to</div>
+        <div class="col-4">
+            <select id="group">
+                <option value="All">Everyone</option>
+                <option value="Myself">Myself</option>
+                <option value="PrivateGroup">Private Group</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="message" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messages"></ul>
+    </div>
+</div>
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/js/chat.js"></script>

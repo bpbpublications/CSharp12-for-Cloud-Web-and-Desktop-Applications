@@ -1,0 +1,32 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p>
+    <input @bind="IncrementCount" />
+</p>
+<AuthorizeView>
+    <Authorized>
+        <p>
+            @context.User.Identity.Name
+            <br />
+            <code>inputValue</code>: @currentCount
+        </p>
+    </Authorized>
+    <NotAuthorized>
+        <p>
+            Not Authorized
+        </p>
+    </NotAuthorized>
+</AuthorizeView>
+@code {
+    private int currentCount = 0;
+
+    private int IncrementCount
+    {
+        get => currentCount;
+        set => currentCount = currentCount + 1;
+    }
+}

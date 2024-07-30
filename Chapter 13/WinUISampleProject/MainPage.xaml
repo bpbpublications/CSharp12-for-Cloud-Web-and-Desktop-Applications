@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="WinUISampleProject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUISampleProject"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Enabled">
+
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" Text="Hello World!"/>
+
+        <TextBlock HorizontalAlignment="Center" Text="Navigation animation"/>
+        <Image  x:Name="SourceImage"
+       HorizontalAlignment="Center" VerticalAlignment="Top"
+       Width="200" Height="200"
+       Stretch="Fill"
+       Source="/Images/SourceImage.png" 
+       PointerPressed="SourceImage_PointerPressed"/>
+
+        <TextBlock HorizontalAlignment="Center" Text="Happiness form"/>
+        <TextBlock HorizontalAlignment="Center" Text="Enter your name"/>
+        <TextBox muxc:BackdropMaterial.ApplyToRootOrPageBackground="True" HorizontalAlignment="Center" Width="200" x:Name="name"/>
+        <muxc:RadioButtons x:Name="feelings" HorizontalAlignment="Center">
+            <muxc:RadioButtons.Header>
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Highlight"/>
+                    <TextBlock Text="How are you feeling today?" Margin="8,0,0,0"/>
+                </StackPanel>
+            </muxc:RadioButtons.Header>
+            <x:String>Good</x:String>
+            <x:String>Very good</x:String>
+            <x:String>Amazing</x:String>
+        </muxc:RadioButtons>
+        <HyperlinkButton muxc:AnimatedIcon.State="normal" Content="OK"
+                              Click="HyperlinkButton_Click"
+                              HorizontalAlignment="Center"/>
+    </StackPanel>
+</Page>
